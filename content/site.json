@@ -1,40 +1,40 @@
 {
   "hero": {
     "badge": "Teknisk produksjon for konferanser og events",
-    "tittel_linje1": "Profesjonell AV\u2011teknikk.",
-    "tittel_linje2": "Alt du trenger, ett team.",
-    "beskrivelse": "Grevent leverer komplett teknisk produksjon for små og mellomstore konferanser — lyd, lys, bilde og streaming med eget utstyr og erfarne teknikere.",
-    "stat1_verdi": "10+",
-    "stat1_tekst": "Års erfaring",
-    "stat2_verdi": "100+",
-    "stat2_tekst": "Gjennomførte produksjoner",
-    "stat3_verdi": "Eget",
-    "stat3_tekst": "utstyrslager"
+    "stat1_verdi": "25+",
+    "stat2_verdi": "1000+",
+    "tittel_linje1": "Profesjonell teknikk og bistand",
+    "stat3_verdi": "Utstyr og kunnskap",
+    "tittel_linje2": "Sømløs avvikling - Skreddersydd for deg!",
+    "stat1_tekst": "Års erfaring innen underholdning og event",
+    "stat2_tekst": "Gjennomførte produksjoner siden 2015",
+    "stat3_tekst": "Alt på ett sted!",
+    "beskrivelse": "Grevent leverer komplett teknisk produksjon for små og mellomstore konferanser og eventer — lyd, lys, bilde og streaming med topp utstyr og erfarne teknikere. Vi har utstyr til enhver anledning og budsjett. Kontakt oss så hjelper vi deg med det du trenger - verken mer eller mindre!"
   },
   "om_oss": {
     "tittel": "Hybrid eventbyrå og teknisk leverandør",
-    "avsnitt1": "Grevent AS ble grunnlagt i 2015 og har siden den gang utviklet seg til å bli en pålitelig partner for teknisk produksjon av konferanser og events. Vi kombinerer rollen som eventbyrå med teknisk leverandør — noe som gir deg én kontaktperson og et sømløst samarbeid fra planlegging til gjennomføring.",
-    "avsnitt2": "Med eget utstyrslager og et nettverk av erfarne frilans-teknikere leverer vi komplette AV-løsninger skreddersydd for ditt arrangement. Vi tar ansvar for hele den tekniske produksjonen, slik at du kan fokusere på innholdet.",
-    "bilde": "bilder/arrangement.jpg",
+    "avsnitt1": "Grevent AS ble grunnlagt i 2015 og har siden den gang utviklet seg til å bli en pålitelig partner for teknisk produksjon av konferanser og events. Vi kombinerer rollen som eventbyrå med teknisk leverandør — noe som gir deg én kontaktperson og et sømløst samarbeid fra planlegging til gjennomføring. Vi stiller med det utstyret som faktisk trengs til jobben, og tilpasser oss kundens budsjett, forventninger og ønsker. ",
+    "avsnitt2": "Med eget utstyrslager og et nettverk av erfarne frilans-teknikere i tillegg til våre egne, leverer vi komplette AV-løsninger skreddersydd for ditt arrangement. Vi tar ansvar for hele den tekniske produksjonen, slik at du kan fokusere på innholdet.",
+    "bilde": "/bilder/alle-2.jpg",
     "fordeler": [
       {
         "tittel": "Alt-i-ett leverandør",
-        "beskrivelse": "Lyd, lys, bilde, streaming og regi i én pakke"
+        "beskrivelse": "Teknisk utstyr og event-kompetanse i én pakke"
       },
       {
         "tittel": "Raskt og fleksibelt",
         "beskrivelse": "Kort vei fra forespørsel til ferdig tilbud"
       },
       {
-        "tittel": "Erfarne teknikere",
+        "tittel": "Bred erfaring",
         "beskrivelse": "Fast team supplert med spesialiserte frilansere"
       }
     ],
     "team": [
       {
-        "navn": "Vegard",
-        "rolle": "Daglig leder / Produsent",
-        "initialer": "VG"
+        "navn": "Vegard Lunde-Wiik",
+        "rolle": "Daglig leder / Produsent / AV-tekniker",
+        "initialer": "VLW"
       },
       {
         "navn": "Matas Vinikaitis",
@@ -52,42 +52,66 @@
         "tittel": "Kameraer og bildemikser",
         "beskrivelse": "PTZ-kameraer, videokameraer og bildemikser for profesjonell flerkamera-produksjon av konferanser og events.",
         "bilde": "bilder/utstyr-video.jpg",
-        "tags": ["PTZ-kameraer", "Bildemikser", "SDI / HDMI"]
+        "tags": [
+          "PTZ-kameraer",
+          "Bildemikser",
+          "SDI / HDMI"
+        ]
       },
       {
         "kategori": "Lyd",
         "tittel": "Lydanlegg og mikrofoner",
         "beskrivelse": "Komplett lydproduksjon med digitale miksere, trådløse mikrofoner og PA-systemer dimensjonert for konferanserom.",
         "bilde": "bilder/utstyr-lyd.jpg",
-        "tags": ["Digital mikser", "Trådløse mik", "PA-system"]
+        "tags": [
+          "Digital mikser",
+          "Trådløse mik",
+          "PA-system"
+        ]
       },
       {
         "kategori": "Lys",
         "tittel": "Scenelys og effektbelysning",
         "beskrivelse": "LED-scenelys, profilspotter og lyskontroll for å skape riktig atmosfære — fra rene konferanselys til stemningsfull eventbelysning.",
         "bilde": "bilder/utstyr-lys.jpg",
-        "tags": ["LED-wash", "Profilspot", "DMX-styring"]
+        "tags": [
+          "LED-wash",
+          "Profilspot",
+          "DMX-styring"
+        ]
       },
       {
         "kategori": "Streaming & presentasjon",
         "tittel": "Streaming og skjermløsninger",
         "beskrivelse": "Utstyr for livestreaming, presentasjonsmaskineri, LED-skjermer og projektor-løsninger tilpasset rommet.",
         "bilde": "bilder/utstyr-streaming.jpg",
-        "tags": ["Streaming", "LED-skjerm", "Projektor"]
+        "tags": [
+          "Streaming",
+          "LED-skjerm",
+          "Projektor"
+        ]
       },
       {
         "kategori": "Regi & kontroll",
         "tittel": "Regibord og teknisk kontroll",
         "beskrivelse": "Komplett regi-oppsett med showkontroll, tidsvisning og kommunikasjon for smidig gjennomføring av programmer.",
         "bilde": "bilder/utstyr-regi.jpg",
-        "tags": ["Companion", "Tally", "Intercom"]
+        "tags": [
+          "Companion",
+          "Tally",
+          "Intercom"
+        ]
       },
       {
         "kategori": "Rigg & infrastruktur",
         "tittel": "Traverser, stativer og kabling",
         "beskrivelse": "Traverser, kamerastativ, kabeltrekk og alt av infrastruktur for en ryddig og sikker installasjon.",
         "bilde": "bilder/utstyr-rigg.jpg",
-        "tags": ["Truss", "Stativer", "Kabling"]
+        "tags": [
+          "Truss",
+          "Stativer",
+          "Kabling"
+        ]
       }
     ]
   },
