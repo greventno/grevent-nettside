@@ -1,0 +1,104 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: "nb_NO"
+
+media_folder: "bilder"
+public_folder: "/bilder"
+
+collections:
+  - name: "innstillinger"
+    label: "Nettside-innhold"
+    files:
+      - name: "site"
+        label: "Rediger nettside"
+        file: "content/site.json"
+        fields:
+          # ====== HERO ======
+          - label: "Forsiden (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge-tekst", name: "badge", widget: "string" }
+              - { label: "Tittel linje 1", name: "tittel_linje1", widget: "string" }
+              - { label: "Tittel linje 2 (farget)", name: "tittel_linje2", widget: "string" }
+              - { label: "Beskrivelse", name: "beskrivelse", widget: "text" }
+              - { label: "Statistikk 1 — Verdi", name: "stat1_verdi", widget: "string" }
+              - { label: "Statistikk 1 — Tekst", name: "stat1_tekst", widget: "string" }
+              - { label: "Statistikk 2 — Verdi", name: "stat2_verdi", widget: "string" }
+              - { label: "Statistikk 2 — Tekst", name: "stat2_tekst", widget: "string" }
+              - { label: "Statistikk 3 — Verdi", name: "stat3_verdi", widget: "string" }
+              - { label: "Statistikk 3 — Tekst", name: "stat3_tekst", widget: "string" }
+
+          # ====== OM OSS ======
+          - label: "Om oss"
+            name: "om_oss"
+            widget: "object"
+            fields:
+              - { label: "Tittel", name: "tittel", widget: "string" }
+              - { label: "Avsnitt 1", name: "avsnitt1", widget: "text" }
+              - { label: "Avsnitt 2", name: "avsnitt2", widget: "text" }
+              - { label: "Bilde", name: "bilde", widget: "image", required: false }
+              - label: "Fordeler"
+                name: "fordeler"
+                widget: "list"
+                fields:
+                  - { label: "Tittel", name: "tittel", widget: "string" }
+                  - { label: "Beskrivelse", name: "beskrivelse", widget: "string" }
+              - label: "Team"
+                name: "team"
+                widget: "list"
+                fields:
+                  - { label: "Navn", name: "navn", widget: "string" }
+                  - { label: "Rolle", name: "rolle", widget: "string" }
+                  - { label: "Initialer", name: "initialer", widget: "string" }
+
+          # ====== UTSTYR ======
+          - label: "Utstyr"
+            name: "utstyr"
+            widget: "object"
+            fields:
+              - { label: "Tittel", name: "tittel", widget: "string" }
+              - { label: "Beskrivelse", name: "beskrivelse", widget: "text" }
+              - label: "Kategorier"
+                name: "kategorier"
+                widget: "list"
+                fields:
+                  - { label: "Kategori", name: "kategori", widget: "string" }
+                  - { label: "Tittel", name: "tittel", widget: "string" }
+                  - { label: "Beskrivelse", name: "beskrivelse", widget: "text" }
+                  - { label: "Bilde", name: "bilde", widget: "image", required: false }
+                  - { label: "Tags (kommaseparert)", name: "tags", widget: "list" }
+
+          # ====== PAKKER ======
+          - label: "Pakkeløsninger"
+            name: "pakker"
+            widget: "object"
+            fields:
+              - { label: "Tittel", name: "tittel", widget: "string" }
+              - { label: "Beskrivelse", name: "beskrivelse", widget: "text" }
+              - { label: "Bunntekst", name: "bunntekst", widget: "string" }
+              - label: "Pakkeliste"
+                name: "liste"
+                widget: "list"
+                fields:
+                  - { label: "Pakkenavn", name: "navn", widget: "string" }
+                  - { label: "Beskrivelse", name: "beskrivelse", widget: "text" }
+                  - { label: "Pris (kun tall, f.eks. 15 000)", name: "pris", widget: "string" }
+                  - { label: "Fremhevet (mest populær)", name: "featured", widget: "boolean", default: false }
+                  - { label: "Inkluderer (en linje per punkt)", name: "inkluderer", widget: "list" }
+
+          # ====== KONTAKT ======
+          - label: "Kontakt"
+            name: "kontakt"
+            widget: "object"
+            fields:
+              - { label: "Tittel", name: "tittel", widget: "string" }
+              - { label: "Beskrivelse", name: "beskrivelse", widget: "text" }
+              - { label: "Firmanavn", name: "firmanavn", widget: "string" }
+              - { label: "Intro-tekst", name: "intro", widget: "text" }
+              - { label: "E-post", name: "epost", widget: "string" }
+              - { label: "Telefon", name: "telefon", widget: "string" }
+              - { label: "Lokasjon", name: "lokasjon", widget: "string" }
+              - { label: "Org.nr", name: "orgnr", widget: "string" }
