@@ -48,58 +48,59 @@
     "beskrivelse": "Vi stiller med eget utstyr av høy kvalitet. Det betyr full kontroll, rask rigging og forutsigbare kostnader for deg.",
     "kategorier": [
       {
+        "kategori": "AV-FLIGHT 1",
+        "tittel": "MINSTEMANN",
+        "beskrivelse": "Det yngste av våre digitale barn:\n\nRoland XS-62S 6-kanals bildemikser\n3 stk. Apple Mac Mini M4 pro\nIntegrert 15\" pull-out monitor\nPerfect Cue mini presentasjonsclicker m/2 håndsett\nKVM-switch, Streamdeck XL etc.\n2 HDMI og 2 SDI output\n\nPasser perfekt til relativt enkle konferanser, håndterer alt av presentasjoner, video, nettsider etc. 2 output fra maskin 1 og 2 til presentasjoner og preview, 1 ledig input for sceneretur etc. Trille-koffert som er lett nok til å kunne fraktes på kollektivtransport.\n\nBegrensninger: Få muligheter til lagvis distribusjon av content (bilde-i-bilde, timer på forskjellige lag etc.), ikke tilpasset kameraproduksjon/streaming, begrensede audio-muligheter. ",
+        "bilde": "/bilder/3-minstemann-åpen-front-m-skjerm.jpg",
+        "tags": [
+          "Companion",
+          "Tally",
+          "Intercom"
+        ]
+      },
+      {
+        "kategori": "AV-FLIGHT 2",
+        "tittel": "LILLEBROR",
+        "beskrivelse": "Det mellomste digitale barnet, tenåringen som kan nesten alt, og tror den er mye tøffere enn den er. Men et fantastisk verktøy som løser det aller meste. \n\nRoland VR-120HD AV-mikser\n2 stk. Fort Beach 11th gen Intel NUC i5 PC\n2 stk. Apple Mac Mini M4 pro\nASUS EBG19 ExpertWIFI PoE router m/wifi antenne\nStreamdeck Studio\nOmnicon Solo Companion Pi m/Streamdeck XL\nMicrocue 2 presentasjonsclicker m/2 håndsett\n3 HDMI og 2 SDI outputs\n\nEn avansert AV-mikser som også kan styre inntil 6 mikrofoner, avansert audio-routing, lagvis bygging av innhold med store muligheter for tilpasninger. Integrert streaming-encoder, mulighet for tilkobling av 2 eksterne maskiner via SDI/HDMI i tillegg til 4 kameraer. \n\nBegrensninger: Kun 1 multiview, tungvint å jobbe flere teknikere på samme rigg ved flerkameraproduksjon etc.\n",
+        "bilde": "/bilder/2-lillebror-front.jpg"
+      },
+      {
+        "kategori": "AV-FLIGHT 3",
+        "tittel": "STOREBROR",
+        "beskrivelse": "Det største digitale barnet\n\nBlackmagic Atem Constellation 8K 4 M/E\nMidas M32 Core m/Dante\n4 stk. Apple Mac Mini M2 Pro m/Dante virtual soundcard\n2 stk. Fort Beach 11th gen Intel NUC i5 PC  m/Dante virtual soundcard\n2 stk. Micro-PC Intel Celeron m/Dante virtual soundcard\n8-kanals TEsmart KVM\n"
+      },
+      {
         "kategori": "Video",
-        "tittel": "Kameraer og bildemikser",
-        "beskrivelse": "PTZ-kameraer, videokameraer og bildemikser for profesjonell flerkamera-produksjon av konferanser og events.",
-        "bilde": "bilder/utstyr-video.jpg",
+        "tittel": "Kameraer",
+        "beskrivelse": "Vi eier 4 stk. Canon CR-N500 og 2 stk. OBSbot Tail 2 PTZ kameraer. Canon brukes til de litt større flerkamera-produksjonene, sammen med vår Skaarhoj PTZ Pro kontroller. OBSbot kameraene er batteridrevne, kan styres over WIFI og brukes blant annet til enkle opptak, enklere 2-kamera produksjoner eller som publikums-kamera under Q&A. Disse kameraene løser de aller fleste produksjonene vi gjør, men kan i enkelte tilfeller suppleres med statiske Canon-kameraer ved behov for ennå flere vinkler.",
+        "bilde": "/bilder/untitled-2.png",
         "tags": [
           "PTZ-kameraer",
-          "Bildemikser",
-          "SDI / HDMI"
+          "videoproduksjon",
+          "streaming"
+        ]
+      },
+      {
+        "kategori": "Video",
+        "tittel": "Skjermer",
+        "beskrivelse": "1 stk. 82\" Samsung 8K skjerm i elektrisk heis-kasse (4000 nits lysstyrke)\n2 stk. 65\" Maxhub 4K skjerm i flightcase (500 nits lysstyrke)\n2 stk. 55\" Maxhub 4K skjerm i flightcase (800 nits lysstyrke)\n2 stk. 43\" Maxhub preview-skjerm m/brakett i transportbager\n1 stk. 32\" Viewsonic preview-skjerm i flightcase med vinkel-stativ\n1 stk. 28\" Lilliput HDMI/SDI proff-monitor i flightcase \n2 stk. 21\" Lilliput HDMI/SDI proff-monitorer i flightcase\nDiverse mindre skjermer/monitorer 7\"-21\"",
+        "bilde": "bilder/utstyr-streaming.jpg",
+        "tags": [
+          "Skjerm",
+          "monitor",
+          "storskjerm",
+          "påsyn"
         ]
       },
       {
         "kategori": "Lyd",
-        "tittel": "Lydanlegg og mikrofoner",
-        "beskrivelse": "Komplett lydproduksjon med digitale miksere, trådløse mikrofoner og PA-systemer dimensjonert for konferanserom.",
+        "tittel": "Høyttalere",
+        "beskrivelse": "2 stk. JBL PRX812 12\" topp\n2 stk. JBL PRX915 15\" topp\n2 stk. JBL PRX918 18\" sub\n2 stk. JBL PRX ONE søyler m/12\" sub og integrert mikser i flightcase\n2 stk. Bose S1 Pro+ (batteridrevne)\n1 stk. Soundboks 3 (batteridreven)\n",
         "bilde": "bilder/utstyr-lyd.jpg",
         "tags": [
           "Digital mikser",
           "Trådløse mik",
           "PA-system"
-        ]
-      },
-      {
-        "kategori": "Lys",
-        "tittel": "Scenelys og effektbelysning",
-        "beskrivelse": "LED-scenelys, profilspotter og lyskontroll for å skape riktig atmosfære — fra rene konferanselys til stemningsfull eventbelysning.",
-        "bilde": "bilder/utstyr-lys.jpg",
-        "tags": [
-          "LED-wash",
-          "Profilspot",
-          "DMX-styring"
-        ]
-      },
-      {
-        "kategori": "Streaming & presentasjon",
-        "tittel": "Streaming og skjermløsninger",
-        "beskrivelse": "Utstyr for livestreaming, presentasjonsmaskineri, LED-skjermer og projektor-løsninger tilpasset rommet.",
-        "bilde": "bilder/utstyr-streaming.jpg",
-        "tags": [
-          "Streaming",
-          "LED-skjerm",
-          "Projektor"
-        ]
-      },
-      {
-        "kategori": "Regi & kontroll",
-        "tittel": "Regibord og teknisk kontroll",
-        "beskrivelse": "Komplett regi-oppsett med showkontroll, tidsvisning og kommunikasjon for smidig gjennomføring av programmer.",
-        "bilde": "bilder/utstyr-regi.jpg",
-        "tags": [
-          "Companion",
-          "Tally",
-          "Intercom"
         ]
       },
       {
@@ -111,6 +112,17 @@
           "Truss",
           "Stativer",
           "Kabling"
+        ]
+      },
+      {
+        "kategori": "Lys",
+        "tittel": "Scenelys og effektbelysning",
+        "beskrivelse": "LED-scenelys, profilspotter og lyskontroll for å skape riktig atmosfære — fra rene konferanselys til stemningsfull eventbelysning.",
+        "bilde": "bilder/utstyr-lys.jpg",
+        "tags": [
+          "LED-wash",
+          "Profilspot",
+          "DMX-styring"
         ]
       }
     ]
