@@ -116,14 +116,19 @@
         ]
       },
       {
+        "kategori": "Lyd",
+        "tittel": "Trådløse mikrofoner",
+        "beskrivelse": "Høsten 2025 investerte vi i nye trådløse systemer. Valget falt på Sennheiser sitt nye EW-DX system. Vi har foreløpig 8 kanaler fordelt på 2 quad mottakere med Dante. Disse har vi 8 beltpacks med bøyler til, samt 2 håndholdte mikrofoner. Iløpet av sommeren 2026 utvides dette til 12 kanaler. "
+      },
+      {
         "kategori": "Lys",
         "tittel": "Scenelys og effektbelysning",
-        "beskrivelse": "LED-scenelys, profilspotter og lyskontroll for å skape riktig atmosfære — fra rene konferanselys til stemningsfull eventbelysning.",
+        "beskrivelse": "Lys er det vi i Grevent kan minst om, så her har vi gode samarbeidspartnere vi tar med oss når det er behov for det. Men vi har det vi innimellom trenger selv, og det er 8 stk. Astera Quikspot som kan brukes som frontlys med låvedører, eller uplights på gulvet. Disse er batteridrevne og kan stå på i opptil 20 timer, og styres trådløst. Vi har også litt \"partylys\" til bruk med enkle DJ-oppsett. ",
         "bilde": "bilder/utstyr-lys.jpg",
         "tags": [
-          "LED-wash",
-          "Profilspot",
-          "DMX-styring"
+          "LED",
+          "frontlys",
+          "dekorlys"
         ]
       }
     ]
