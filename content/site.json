@@ -67,12 +67,13 @@
       {
         "kategori": "AV-FLIGHT 3",
         "tittel": "STOREBROR",
-        "beskrivelse": "Det største digitale barnet\n\nBlackmagic Atem Constellation 8K 4 M/E\nMidas M32 Core m/Dante\n4 stk. Apple Mac Mini M2 Pro m/Dante virtual soundcard\n2 stk. Fort Beach 11th gen Intel NUC i5 PC  m/Dante virtual soundcard\n2 stk. Micro-PC Intel Celeron m/Dante virtual soundcard\n8-kanals TEsmart KVM\n"
+        "beskrivelse": "Det største digitale barnet\n\nBlackmagic Atem Constellation 8K\n4 individuelle M/E lag\n40 input / 24 output\nMidas M32 Core lydmikser m/Dante-kort\n4 stk. Apple Mac Mini M2 Pro m/Dante virtual soundcard\n2 stk. Fort Beach 11th gen Intel NUC i5 PC  m/Dante virtual soundcard\n2 stk. Micro-PC Intel Celeron m/Dante virtual soundcard\n8-kanals TEsmart KVM-switch\nOmnicon companion Pi ( 1stk. dual v2, 1 stk. Mono, 1 stk. Plus)\n\nOptional Controller flight:\nBlackmagic 1 M/E Advanced Panel\nHyperdeck Studio HD Pro SSD/SD recorder\nSmartview 4K\nSmartview Duo\nSmartview Scope\n\nDette oppsettet kan brukes med kun AV-flight til avansert konferanseproduksjon, der det f.eks. trengs forskjellig innhold på flere flater (sideskjermer, side-rom, live/stream/record etc.). I tillegg kan control-flight benyttes for bedre kontroll over flatene, og til kameraproduksjon/streaming. \nBegrensninger: 1080p opptak/produksjon, men kombineres med større scalere ved behov (bruk av LED-vegg o.l.). \n\n",
+        "bilde": "/bilder/1-storebror-åpen-front.jpg"
       },
       {
         "kategori": "Video",
         "tittel": "Kameraer",
-        "beskrivelse": "Vi eier 4 stk. Canon CR-N500 og 2 stk. OBSbot Tail 2 PTZ kameraer. Canon brukes til de litt større flerkamera-produksjonene, sammen med vår Skaarhoj PTZ Pro kontroller. OBSbot kameraene er batteridrevne, kan styres over WIFI og brukes blant annet til enkle opptak, enklere 2-kamera produksjoner eller som publikums-kamera under Q&A. Disse kameraene løser de aller fleste produksjonene vi gjør, men kan i enkelte tilfeller suppleres med statiske Canon-kameraer ved behov for ennå flere vinkler.",
+        "beskrivelse": "Vi eier følgende PTZ kameraer: \n\n4 stk. Canon CR-N500 i flightcase med stativer, tromler etc.\n2 stk. OBSbot Tail 2\n\nCanon brukes til de litt større flerkamera-produksjonene, sammen med vår Skaarhoj PTZ Pro kontroller. OBSbot kameraene er 4K, batteridrevne, og kan styres med fjernkontroll eller over WIFI/kablet nettverk og brukes blant annet til enkle opptak, enklere 2-kamera produksjoner eller som publikums-kamera under Q&A o.l. Disse kameraene løser de aller fleste produksjonene vi gjør, men kan i enkelte tilfeller suppleres med statiske Canon-kameraer ved behov for ennå flere vinkler.",
         "bilde": "/bilder/untitled-2.png",
         "tags": [
           "PTZ-kameraer",
@@ -83,8 +84,8 @@
       {
         "kategori": "Video",
         "tittel": "Skjermer",
-        "beskrivelse": "1 stk. 82\" Samsung 8K skjerm i elektrisk heis-kasse (4000 nits lysstyrke)\n2 stk. 65\" Maxhub 4K skjerm i flightcase (500 nits lysstyrke)\n2 stk. 55\" Maxhub 4K skjerm i flightcase (800 nits lysstyrke)\n2 stk. 43\" Maxhub preview-skjerm m/brakett i transportbager\n1 stk. 32\" Viewsonic preview-skjerm i flightcase med vinkel-stativ\n1 stk. 28\" Lilliput HDMI/SDI proff-monitor i flightcase \n2 stk. 21\" Lilliput HDMI/SDI proff-monitorer i flightcase\nDiverse mindre skjermer/monitorer 7\"-21\"",
-        "bilde": "bilder/utstyr-streaming.jpg",
+        "beskrivelse": "1 stk. 82\" Samsung 8K skjerm i elektrisk heis-kasse (4000 nits lysstyrke)\n2 stk. 65\" Maxhub 4K skjerm i flightcase (500 nits lysstyrke)\n2 stk. 55\" Maxhub 4K skjerm i flightcase (800 nits lysstyrke)\n2 stk. 43\" Maxhub preview-skjerm m/brakett i transportbager\n1 stk. 32\" Viewsonic preview-skjerm i flightcase med vinkel-stativ\n1 stk. 28\" Lilliput HDMI/SDI proff-monitor i flightcase \n2 stk. 21\" Lilliput HDMI/SDI proff-monitorer i flightcase\nDiverse mindre skjermer/monitorer 7\"-21\"\n\nVår 82\" storskjerm passer perfekt på messe-stand, med bord for brosjyrer e.l. i front. Den kan også kles på 3 sider med spesialtilpasset banner. Ta kontakt for mer info! ",
+        "bilde": "/bilder/img_4042.jpg",
         "tags": [
           "Skjerm",
           "monitor",
@@ -98,15 +99,15 @@
         "beskrivelse": "2 stk. JBL PRX812 12\" topp\n2 stk. JBL PRX915 15\" topp\n2 stk. JBL PRX918 18\" sub\n2 stk. JBL PRX ONE søyler m/12\" sub og integrert mikser i flightcase\n2 stk. Bose S1 Pro+ (batteridrevne)\n1 stk. Soundboks 3 (batteridreven)\n",
         "bilde": "bilder/utstyr-lyd.jpg",
         "tags": [
-          "Digital mikser",
-          "Trådløse mik",
-          "PA-system"
+          "PA-system",
+          "høyttalere",
+          "lydanlegg"
         ]
       },
       {
-        "kategori": "Rigg & infrastruktur",
-        "tittel": "Traverser, stativer og kabling",
-        "beskrivelse": "Traverser, kamerastativ, kabeltrekk og alt av infrastruktur for en ryddig og sikker installasjon.",
+        "kategori": "Lyd",
+        "tittel": "Lydmiksere",
+        "beskrivelse": "Behringer Wing Compact\nAllen & Heath CQ18T\nSoundcraft Signature 10\n\nVi har også følgende stageboxer til vår Behringer mikser:\nMidas DL16 16/8 stagebox\nBehringer SD8 8/8 stagebox\nMidas DN4888 8/8 Stageconnect box\n",
         "bilde": "bilder/utstyr-rigg.jpg",
         "tags": [
           "Truss",
