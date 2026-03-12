@@ -429,113 +429,141 @@
 
     const checkSvg = '<svg class="package-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
 
+    // Helper: ensure value is array (Decap CMS may save lists as strings)
+    function ensureArray(val) {
+        if (Array.isArray(val)) return val;
+        if (typeof val === 'string' && val.trim()) return val.split(',').map(s => s.trim());
+        return [];
+    }
+
     // Load content and render
     fetch('content/site.json')
-        .then(r => r.json())
+        .then(r => { if (!r.ok) throw new Error('Kunne ikke laste innhold: ' + r.status); return r.json(); })
         .then(data => {
             // Hero
-            document.getElementById('hero-badge').textContent = data.hero.badge;
-            document.getElementById('hero-title1').textContent = data.hero.tittel_linje1;
-            document.getElementById('hero-title2').textContent = data.hero.tittel_linje2;
-            document.getElementById('hero-desc').textContent = data.hero.beskrivelse;
-            document.getElementById('hero-stats').innerHTML = `
-                <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat1_verdi}</div><div class="hero-stat-label">${data.hero.stat1_tekst}</div></div>
-                <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat2_verdi}</div><div class="hero-stat-label">${data.hero.stat2_tekst}</div></div>
-                <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat3_verdi}</div><div class="hero-stat-label">${data.hero.stat3_tekst}</div></div>
-            `;
+            try {
+                document.getElementById('hero-badge').textContent = data.hero.badge;
+                document.getElementById('hero-title1').textContent = data.hero.tittel_linje1;
+                document.getElementById('hero-title2').textContent = data.hero.tittel_linje2;
+                document.getElementById('hero-desc').textContent = data.hero.beskrivelse;
+                document.getElementById('hero-stats').innerHTML = `
+                    <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat1_verdi}</div><div class="hero-stat-label">${data.hero.stat1_tekst}</div></div>
+                    <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat2_verdi}</div><div class="hero-stat-label">${data.hero.stat2_tekst}</div></div>
+                    <div class="hero-stat"><div class="hero-stat-value">${data.hero.stat3_verdi}</div><div class="hero-stat-label">${data.hero.stat3_tekst}</div></div>
+                `;
+            } catch(e) { console.error('Feil i Hero-seksjon:', e); }
 
             // About
-            document.getElementById('about-title').textContent = data.om_oss.tittel;
-            document.getElementById('about-p1').textContent = data.om_oss.avsnitt1;
-            document.getElementById('about-p2').textContent = data.om_oss.avsnitt2;
+            try {
+                document.getElementById('about-title').textContent = data.om_oss.tittel;
+                document.getElementById('about-p1').textContent = data.om_oss.avsnitt1;
+                document.getElementById('about-p2').textContent = data.om_oss.avsnitt2;
 
-            const imgContainer = document.getElementById('about-image-container');
-            if (data.om_oss.bilde && !data.om_oss.bilde.includes('arrangement.jpg')) {
-                imgContainer.innerHTML = `<img src="${data.om_oss.bilde}" alt="Grevent arrangement">`;
-            } else {
-                imgContainer.innerHTML = '<div class="about-image-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Bilde fra arrangement</span></div>';
-            }
+                const imgContainer = document.getElementById('about-image-container');
+                if (data.om_oss.bilde && data.om_oss.bilde !== 'bilder/arrangement.jpg') {
+                    imgContainer.innerHTML = `<img src="${data.om_oss.bilde}" alt="Grevent arrangement">`;
+                } else {
+                    imgContainer.innerHTML = '<div class="about-image-placeholder"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Bilde fra arrangement</span></div>';
+                }
 
-            document.getElementById('about-features').innerHTML = data.om_oss.fordeler.map((f, i) => `
-                <div class="about-feature">
-                    <div class="about-feature-icon">${featureIcons[i] || featureIcons[0]}</div>
-                    <div><h4>${f.tittel}</h4><p>${f.beskrivelse}</p></div>
-                </div>
-            `).join('');
+                document.getElementById('about-features').innerHTML = ensureArray(data.om_oss.fordeler).map((f, i) => `
+                    <div class="about-feature">
+                        <div class="about-feature-icon">${featureIcons[i] || featureIcons[0]}</div>
+                        <div><h4>${f.tittel || ''}</h4><p>${f.beskrivelse || ''}</p></div>
+                    </div>
+                `).join('');
 
-            const colors = ['var(--color-accent), var(--color-accent-dark)', 'var(--color-accent-secondary), #78797b'];
-            document.getElementById('team-grid').innerHTML = data.om_oss.team.map((t, i) => `
-                <div class="team-card">
-                    <div class="team-avatar" style="background: linear-gradient(135deg, ${colors[i] || colors[0]});">${t.initialer}</div>
-                    <div class="team-name">${t.navn}</div>
-                    <div class="team-role">${t.rolle}</div>
-                </div>
-            `).join('');
+                const colors = ['var(--color-accent), var(--color-accent-dark)', 'var(--color-accent-secondary), #78797b'];
+                document.getElementById('team-grid').innerHTML = ensureArray(data.om_oss.team).map((t, i) => `
+                    <div class="team-card">
+                        <div class="team-avatar" style="background: linear-gradient(135deg, ${colors[i] || colors[0]});">${t.initialer || ''}</div>
+                        <div class="team-name">${t.navn || ''}</div>
+                        <div class="team-role">${t.rolle || ''}</div>
+                    </div>
+                `).join('');
+            } catch(e) { console.error('Feil i Om oss-seksjon:', e); }
 
             // Equipment
-            document.getElementById('eq-title').textContent = data.utstyr.tittel;
-            document.getElementById('eq-desc').textContent = data.utstyr.beskrivelse;
-            document.getElementById('equipment-grid').innerHTML = data.utstyr.kategorier.map(eq => {
-                const hasImage = eq.bilde && !eq.bilde.includes('utstyr-');
-                const imageContent = hasImage
-                    ? `<img src="${eq.bilde}" alt="${eq.tittel}">`
-                    : (eqIcons[eq.kategori] || eqIcons['Video']);
-                return `
-                <div class="eq-card fade-up">
-                    <div class="eq-card-image">${imageContent}</div>
-                    <div class="eq-card-body">
-                        <div class="eq-card-category">${eq.kategori}</div>
-                        <h3>${eq.tittel}</h3>
-                        <p>${eq.beskrivelse}</p>
-                        <div class="eq-card-specs">${eq.tags.map(t => `<span class="eq-spec-tag">${t}</span>`).join('')}</div>
-                    </div>
-                </div>`;
-            }).join('');
+            try {
+                document.getElementById('eq-title').textContent = data.utstyr.tittel;
+                document.getElementById('eq-desc').textContent = data.utstyr.beskrivelse;
+                const kategorier = ensureArray(data.utstyr.kategorier);
+                document.getElementById('equipment-grid').innerHTML = kategorier.map(eq => {
+                    const hasImage = eq.bilde && eq.bilde.trim() !== '';
+                    const imageContent = hasImage
+                        ? `<img src="${eq.bilde}" alt="${eq.tittel || ''}" onerror="this.parentElement.innerHTML='${(eqIcons[eq.kategori] || eqIcons['Video']).replace(/'/g, "\\'")}';">`
+                        : (eqIcons[eq.kategori] || eqIcons['Video']);
+                    const tags = ensureArray(eq.tags);
+                    return `
+                    <div class="eq-card fade-up">
+                        <div class="eq-card-image">${imageContent}</div>
+                        <div class="eq-card-body">
+                            <div class="eq-card-category">${eq.kategori || ''}</div>
+                            <h3>${eq.tittel || ''}</h3>
+                            <p>${eq.beskrivelse || ''}</p>
+                            <div class="eq-card-specs">${tags.map(t => `<span class="eq-spec-tag">${t}</span>`).join('')}</div>
+                        </div>
+                    </div>`;
+                }).join('');
+            } catch(e) { console.error('Feil i Utstyr-seksjon:', e); }
 
             // Packages
-            document.getElementById('pkg-title').textContent = data.pakker.tittel;
-            document.getElementById('pkg-desc').textContent = data.pakker.beskrivelse;
-            document.getElementById('pkg-footer').textContent = data.pakker.bunntekst;
-            document.getElementById('package-grid').innerHTML = data.pakker.liste.map(pkg => `
-                <div class="package-card ${pkg.featured ? 'featured' : ''} fade-up">
-                    ${pkg.featured ? '<div class="package-badge">Mest populær</div>' : ''}
-                    <div class="package-name">${pkg.navn}</div>
-                    <div class="package-desc">${pkg.beskrivelse}</div>
-                    <div class="package-price">
-                        <div class="package-price-label">Fra</div>
-                        <div class="package-price-value">${pkg.pris} <span class="package-price-unit">kr / dag</span></div>
+            try {
+                document.getElementById('pkg-title').textContent = data.pakker.tittel;
+                document.getElementById('pkg-desc').textContent = data.pakker.beskrivelse;
+                document.getElementById('pkg-footer').textContent = data.pakker.bunntekst;
+                const pakkeliste = ensureArray(data.pakker.liste);
+                document.getElementById('package-grid').innerHTML = pakkeliste.map(pkg => `
+                    <div class="package-card ${pkg.featured ? 'featured' : ''} fade-up">
+                        ${pkg.featured ? '<div class="package-badge">Mest populær</div>' : ''}
+                        <div class="package-name">${pkg.navn || ''}</div>
+                        <div class="package-desc">${pkg.beskrivelse || ''}</div>
+                        <div class="package-price">
+                            <div class="package-price-label">Fra</div>
+                            <div class="package-price-value">${pkg.pris || ''} <span class="package-price-unit">kr / dag</span></div>
+                        </div>
+                        <ul class="package-includes">${ensureArray(pkg.inkluderer).map(item => `<li>${checkSvg}${item}</li>`).join('')}</ul>
+                        <a href="#kontakt" class="btn ${pkg.featured ? 'btn-primary' : 'btn-secondary'}">Be om tilbud</a>
                     </div>
-                    <ul class="package-includes">${pkg.inkluderer.map(item => `<li>${checkSvg}${item}</li>`).join('')}</ul>
-                    <a href="#kontakt" class="btn ${pkg.featured ? 'btn-primary' : 'btn-secondary'}">Be om tilbud</a>
-                </div>
-            `).join('');
+                `).join('');
+            } catch(e) { console.error('Feil i Pakker-seksjon:', e); }
 
             // Contact
-            document.getElementById('contact-title').textContent = data.kontakt.tittel;
-            document.getElementById('contact-desc').textContent = data.kontakt.beskrivelse;
-            document.getElementById('contact-info').innerHTML = `
-                <h3>${data.kontakt.firmanavn}</h3>
-                <p>${data.kontakt.intro}</p>
-                <div class="contact-details">
-                    <div class="contact-item"><div class="contact-icon">${contactIcons.epost}</div><div><div class="contact-item-label">E-post</div><div class="contact-item-value"><a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a></div></div></div>
-                    <div class="contact-item"><div class="contact-icon">${contactIcons.telefon}</div><div><div class="contact-item-label">Telefon</div><div class="contact-item-value"><a href="tel:${data.kontakt.telefon.replace(/\s/g,'')}">${data.kontakt.telefon}</a></div></div></div>
-                    <div class="contact-item"><div class="contact-icon">${contactIcons.lokasjon}</div><div><div class="contact-item-label">Lokasjon</div><div class="contact-item-value">${data.kontakt.lokasjon}</div></div></div>
-                    <div class="contact-item"><div class="contact-icon">${contactIcons.orgnr}</div><div><div class="contact-item-label">Org.nr</div><div class="contact-item-value">${data.kontakt.orgnr}</div></div></div>
-                </div>
-            `;
+            try {
+                document.getElementById('contact-title').textContent = data.kontakt.tittel;
+                document.getElementById('contact-desc').textContent = data.kontakt.beskrivelse;
+                document.getElementById('contact-info').innerHTML = `
+                    <h3>${data.kontakt.firmanavn}</h3>
+                    <p>${data.kontakt.intro}</p>
+                    <div class="contact-details">
+                        <div class="contact-item"><div class="contact-icon">${contactIcons.epost}</div><div><div class="contact-item-label">E-post</div><div class="contact-item-value"><a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a></div></div></div>
+                        <div class="contact-item"><div class="contact-icon">${contactIcons.telefon}</div><div><div class="contact-item-label">Telefon</div><div class="contact-item-value"><a href="tel:${data.kontakt.telefon.replace(/\s/g,'')}">${data.kontakt.telefon}</a></div></div></div>
+                        <div class="contact-item"><div class="contact-icon">${contactIcons.lokasjon}</div><div><div class="contact-item-label">Lokasjon</div><div class="contact-item-value">${data.kontakt.lokasjon}</div></div></div>
+                        <div class="contact-item"><div class="contact-icon">${contactIcons.orgnr}</div><div><div class="contact-item-label">Org.nr</div><div class="contact-item-value">${data.kontakt.orgnr}</div></div></div>
+                    </div>
+                `;
+            } catch(e) { console.error('Feil i Kontakt-seksjon:', e); }
 
             // Package select in form
-            const sel = document.getElementById('package-select');
-            sel.innerHTML = '<option value="">Velg pakke (valgfritt)</option>' +
-                data.pakker.liste.map(p => `<option value="${p.navn.toLowerCase()}">${p.navn}</option>`).join('') +
-                '<option value="skreddersydd">Skreddersydd løsning</option>';
+            try {
+                const sel = document.getElementById('package-select');
+                sel.innerHTML = '<option value="">Velg pakke (valgfritt)</option>' +
+                    ensureArray(data.pakker.liste).map(p => `<option value="${(p.navn || '').toLowerCase()}">${p.navn || ''}</option>`).join('') +
+                    '<option value="skreddersydd">Skreddersydd løsning</option>';
+            } catch(e) { console.error('Feil i pakke-velger:', e); }
 
             // Footer
-            document.getElementById('footer-email').innerHTML = `<a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a>`;
-            document.getElementById('footer-orgnr').textContent = `Org.nr: ${data.kontakt.orgnr}`;
+            try {
+                document.getElementById('footer-email').innerHTML = `<a href="mailto:${data.kontakt.epost}">${data.kontakt.epost}</a>`;
+                document.getElementById('footer-orgnr').textContent = `Org.nr: ${data.kontakt.orgnr}`;
+            } catch(e) { console.error('Feil i footer:', e); }
 
             // Re-init animations for dynamically added elements
             document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        })
+        .catch(err => {
+            console.error('Feil ved lasting av innhold:', err);
+            document.body.innerHTML += '<div style="position:fixed;bottom:20px;left:20px;background:#ff4444;color:#fff;padding:12px 20px;border-radius:8px;font-size:14px;z-index:9999;">Kunne ikke laste innhold. Prøv å laste siden på nytt.</div>';
         });
 
     // Nav
